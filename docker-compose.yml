@@ -1,0 +1,19 @@
+#created from docker autocompose, not tested
+version: "3.6"
+services:
+  5etools:
+    command:
+      - -D
+      - -l
+      - /dev/stderr
+      - -d
+      - /var/www/http
+    container_name: 5etools
+    entrypoint:
+      - /usr/sbin/thttpd
+    image: ghcr.io/5etools-mirror-1/5etools:latest
+#    network_mode: bridge
+    ports:
+      - ${PORT}:80/tcp
+    restart: unless-stopped
+    working_dir: /var/www/http

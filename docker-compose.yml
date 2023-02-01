@@ -15,5 +15,6 @@ services:
 #    network_mode: bridge
     ports:
       - ${PORT}:80/tcp
+    network_mode: bridge
     restart: unless-stopped
     working_dir: /var/www/http
